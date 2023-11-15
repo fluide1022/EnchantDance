@@ -1,0 +1,78 @@
+
+# Experiment name
+NAME: dance_diffusion
+DEBUG: False
+# Devices. Optional: “cpu”, “gpu”
+ACCELERATOR: 'gpu'
+# Index of GPUs eg. [0] or [0,1,2,3]
+DEVICE: [0,1,2,3,4,5,6,7]
+
+TRAIN:
+  # Model stage
+  STAGE: diffusion
+  # Training dataset name
+  DATASETS: ['choreospectrum3d']
+  # Number of dataloader workers
+  NUM_WORKERS: 8
+  # Size of batches
+  BATCH_SIZE: 128
+  # Total epochs for training
+  END_EPOCH: 4000
+
+  RESUME: '' # Resume training
+  PRETRAINED_VAE: '' # pretrained vae
+  OPTIM:
+    TYPE: AdamW # Optimizer type
+    LR: 1e-4 # Learning rate
+
+
+EVAL:
+  DATASETS: ['choreospectrum3d'] # Evaluating datasets
+  BATCH_SIZE: 32 
+  SPLIT: test
+
+TEST:
+  CHECKPOINTS: '' # Pretrained model path
+  DATASETS: ['choreospectrum3d'] 
+  SPLIT: test
+  BATCH_SIZE: 1 
+  MEAN: False
+  NUM_SAMPLES: 1
+  FACT: 1
+
+DATASET:
+  JOINT_TYPE: 'humanml3d' # join type
+
+METRIC:
+  TYPE: ['TemosMetric', 'TM2TMetrics']
+
+LOSS:
+  TYPE: enchant # Losses type
+  LAMBDA_LATENT: 1.0e-5 # Lambda for latent Losses
+  LAMBDA_KL: 1.0e-4 # Lambda for kl Losses
+  LAMBDA_REC: 1.0 # Lambda for reconstruction Losses
+  LAMBDA_CROSS: 1.0 # Lambda for reconstruction Losses
+  DIST_SYNC_ON_STEP: False 
+
+model:
+  vae: true # whether vae model
+  model_type: enchant # model type
+  condition: 'music'
+  latent_dim: [1, 256] # latent dimension
+  ff_size: 1024 #
+  num_layers: 9 # number of layers
+  num_head: 4 # number of head layers
+  droupout: 0.1 # dropout rate
+  activation: gelu # activation type
+  guidance_scale: 1.0 #
+  guidance_uncondp: 0.1 # 0.1 0.25
+
+LOGGER:
+  SACE_CHECKPOINT_EPOCH: 200
+  LOG_EVERY_STEPS: 1
+  VAL_EVERY_STEPS: 200
+  TENSORBOARD: True
+  WANDB:
+    PROJECT: null
+    OFFLINE: False
+    RESUME_ID: null

@@ -1,0 +1,9 @@
+FOLDER: './experiments' # Experiment files saving path
+
+TEST:
+  FOLDER: './results' # Testing files saving path
+
+DATASET:
+  CHOREOSPECTRUM3D:
+    ROOT: '' 
+    SPLIT_ROOT: '' 

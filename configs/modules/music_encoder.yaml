@@ -1,0 +1,12 @@
+music_encoder:
+  target: enchant.models.architectures.jukebox_transformer.TransformerEncoder
+  params:
+    cond_feature_dim: 4800
+    num_layers: 2 
+    latent_dim: 512 
+    num_heads: 8
+    ff_size: 1024
+    dropout: 0.1
+    batch_first: True
+    rotary: False
+
