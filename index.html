@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="EnchantDance: Unveiling the Potential of Music-Driven Dance Movement">
+  <meta name="keywords" content="Nerfies, D-NeRF, NeRF">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Persona-Gestor</title>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-PYVRSFMDRL');
+  </script>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/favicon.svg">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+<body>
+
+    </div>
+
+  </div>
+</nav>
+
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">EnchantDance: Unveiling the Potential of Music-Driven Dance Movement</h1>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a>Bo Han</a><sup>1</sup>,</span>
+            <span class="author-block">
+              <a>Teng Zhang</a><sup>1</sup>,</span>
+            <span class="author-block">
+              <a>Zeyu Ling</a><sup>1</sup>,</span>
+            <span class="author-block">
+              <a>Yi Ren</a><sup>2</sup>,
+            </span>
+            <span class="author-block">
+              <a>Feilin Han </a><sup>3</sup>,
+            </span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>1</sup>College of Computer Science and Technology, Zhejiang University</span>
+            <span class="author-block"><sup>2</sup>ByteDance AI Lab</span>
+            <span class="author-block"><sup>3</sup>Department of Film and TV Technology at Beijing Film Academy</span>
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- PDF Link. -->
+              <span class="link-block">
+                <a href="https://arxiv.org/pdf/2312.15946"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
+              <!-- arxiv Link. -->
+
+              <!-- Code Link. -->
+              <span class="link-block">
+                <a href="https://github.com/fluide1022/EnchantDance"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                  </a>
+              </span>
+
+
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <h2 class="title">Abstract</h2>
+
+    <p>Music-driven dance generation involves creating coherent dance movements that correspond to the given music. While existing methods can produce physically plausible dances, they often struggle to generalize to out-of-set data. The challenge arises from three aspects: 1) the high diversity of dance movements and significant differences in the distribution of music modalities, which make it difficult to generate music-aligned dance movements. 2) the lack of a large-scale music-dance dataset, which hinders the generation of generalized dance movements from music. 3) The protracted nature of dance movements poses a challenge to the maintenance of a consistent dance style. In this work, we introduce the EnchantDance framework, a state-of-the-art method for dance generation. Due to the redundancy of the original dance sequence along the time axis, EnchantDance first constructs a strong dance latent space and then trains a dance diffusion model on the dance latent space. To address the data gap, we construct a large-scale music-dance dataset, ChoreoSpectrum3D Dataset, which includes four dance genres and has a total duration of 70.32 hours, making it the largest reported music-dance dataset to date. To enhance consistency between music genre and dance style, we pre-train a music genre prediction network using transfer learning and incorporate music genre as extra conditional information in the training of the dance diffusion model. Extensive experiments demonstrate that our proposed framework achieves state-of-the-art performance on dance quality, diversity, and consistency.</p>
+    <br>
+    
+    <div style="text-align: center">
+      <figure>
+      <img src="./overall.png" alt="Summary" width="900" >
+        <figcaption>Overview of the EnchantDance Framework. Upon completion of pre-training for the Genre Prediction Network and
+          Dance VAE, their weights are frozen (gray). The Dance Diffusion comprises a forward process (dotted line) and a denoising
+          process (solid line). The forward process incrementally introduces noise to the isotrop. </figcaption>
+      </figure>
+    </div>
+
+
+    <h2 class="title">Ballet</h2>
+
+    <div style="background-color: rgb(0, 0, 0);">
+        <div class="video-row" style="display: flex; justify-content: space-around;">
+            <div class="col" style="padding: 0; margin: 0 10px;">
+                <video class="specialvideo video lazy img-fluid" autoplay muted loop playsinline controls>
+                    <source src="./videos/ballet_video00430_1444_1865_40_converted.mp4" type="video/mp4">
+                </video>
+            </div>
+            <div class="col" style="padding: 0; margin: 0 10px;">
+                <video class="specialvideo video lazy img-fluid" autoplay muted loop playsinline controls>
+                    <source src="./videos/ballet_video00451_3834_4197_40_converted.mp4" type="video/mp4">
+                </video>
+            </div>
+        </div>
+    </div>
+    <div style="background-color: rgb(0, 0, 0);">
+      <div class="video-row" style="display: flex; justify-content: space-around;">
+          <div class="col" style="padding: 0; margin: 0 10px;">
+              <video class="specialvideo video lazy img-fluid" autoplay muted loop playsinline controls>
+                  <source src="./videos/ballet_video00500_5572_7141_160_converted.mp4" type="video/mp4">
+              </video>
+          </div>
+          <div class="col" style="padding: 0; margin: 0 10px;">
+              <video class="specialvideo video lazy img-fluid" autoplay muted loop playsinline controls>
+                  <source src="./videos/ballet_video00585_1865_2085_0_converted.mp4" type="video/mp4">
+              </video>
+          </div>
+      </div>
+  </div>
+
+  <h2 class="title">Pop</h2>
+
+  <div style="background-color: rgb(0, 0, 0);">
+      <div class="video-row" style="display: flex; justify-content: space-around;">
+          <div class="col" style="padding: 0; margin: 0 10px;">
+              <video class="specialvideo video lazy img-fluid" autoplay muted loop playsinline controls>
+                  <source src="./videos/pop_video00176_0_4119_3320_converted.mp4" type="video/mp4">
+              </video>
+          </div>
+          <div class="col" style="padding: 0; margin: 0 10px;">
+              <video class="specialvideo video lazy img-fluid" autoplay muted loop playsinline controls>
+                  <source src="./videos/pop_video00177_0_1819_1480_converted.mp4" type="video/mp4">
+              </video>
+          </div>
+      </div>
+  </div>
+
+  <div style="background-color: rgb(0, 0, 0);">
+    <div class="video-row" style="display: flex; justify-content: space-around;">
+        <div class="col" style="padding: 0; margin: 0 10px;">
+            <video class="specialvideo video lazy img-fluid" autoplay muted loop playsinline controls>
+                <source src="./videos/pop_video00178_0_1666_760_converted.mp4" type="video/mp4">
+            </video>
+        </div>
+        <div class="col" style="padding: 0; margin: 0 10px;">
+            <video class="specialvideo video lazy img-fluid" autoplay muted loop playsinline controls>
+                <source src="./videos/pop_video00186_0_5150_2120_converted.mp4" type="video/mp4">
+            </video>
+        </div>
+    </div>
+  </div>
+
+<div style="background-color: rgb(0, 0, 0);">
+  <div class="video-row" style="display: flex; justify-content: space-around;">
+      <div class="col" style="padding: 0; margin: 0 10px;">
+          <video class="specialvideo video lazy img-fluid" autoplay muted loop playsinline controls>
+              <source src="./videos/pop_video00187_5188_9814_3520_converted.mp4" type="video/mp4">
+          </video>
+      </div>
+      <div class="col" style="padding: 0; margin: 0 10px;">
+          <video class="specialvideo video lazy img-fluid" autoplay muted loop playsinline controls>
+              <source src="./videos/pop_video00187_9817_13384_1640_converted.mp4" type="video/mp4">
+          </video>
+      </div>
+  </div>
+</div>
+
+<h2 class="title">Spica</h2>
+<div style="background-color: rgb(0, 0, 0);">
+  <div class="video-row" style="display: flex; justify-content: space-around;">
+      <div class="col" style="padding: 0; margin: 0 10px;">
+          <video class="specialvideo video lazy img-fluid" autoplay muted loop playsinline controls>
+              <source src="./videos/spica_video00000_3_1667_1440_converted.mp4" type="video/mp4">
+          </video>
+      </div>
+      <div class="col" style="padding: 0; margin: 0 10px;">
+          <video class="specialvideo video lazy img-fluid" autoplay muted loop playsinline controls>
+              <source src="./videos/spica_video00004_0_4661_3360_converted.mp4" type="video/mp4">
+          </video>
+      </div>
+  </div>
+</div>
+
+<div style="background-color: rgb(0, 0, 0);">
+  <div class="video-row" style="display: flex; justify-content: space-around;">
+      <div class="col" style="padding: 0; margin: 0 10px;">
+          <video class="specialvideo video lazy img-fluid" autoplay muted loop playsinline controls>
+              <source src="./videos/spica_video00008_206_2301_1720_converted.mp4" type="video/mp4">
+          </video>
+      </div>
+      <div class="col" style="padding: 0; margin: 0 10px;">
+          <video class="specialvideo video lazy img-fluid" autoplay muted loop playsinline controls>
+              <source src="./videos/spica_video00282_1919_2428_40_converted.mp4" type="video/mp4">
+          </video>
+      </div>
+  </div>
+</div>
+
+</div>
+
+
+<footer class="footer">
+  <div class="container">
+    <div class="content has-text-centered">
+      <a class="icon-link"
+         href="./static/videos/nerfies_paper.pdf">
+        <i class="fas fa-file-pdf"></i>
+      </a>
+      <a class="icon-link" href="https://github.com/keunhong" class="external-link" disabled>
+        <i class="fab fa-github"></i>
+      </a>
+    </div>
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            This website is licensed under a <a rel="license"
+                                                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+          <p>
+            This means you are free to borrow the <a
+              href="https://github.com/nerfies/nerfies.github.io">source code</a> of this website,
+            we just ask that you link back to this page in the footer.
+            Please remember to remove the analytics code included in the header of the website which
+            you do not want on your website.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
