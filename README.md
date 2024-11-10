@@ -40,8 +40,20 @@
 
 ### Train VAE
 python -m train --cfg configs/config_vae.yaml --cfg_assets configs/assets.yaml --batch_size 64 --nodebug
-# Inference
+
+### Train Diffusion
+
+python -m train --cfg configs/config_diffusion.yaml --cfg_assets configs/assets.yaml --batch_size 64 --nodebug
+
+# 🎯 Inference
+## 🎵 Music to Dance Generation
+```bash
 python demo.py --task=music_dance
+```
+
+## 🎨 Visualization Examples
+- 💃 Motion sequences will be saved as `.npz` files
+- 🎦 Rendered videos to `.mp4` files with Blender
 
 ## 🤝 Citation
 
